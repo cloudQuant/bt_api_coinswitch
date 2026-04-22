@@ -51,7 +51,9 @@ class CoinSwitchBarData(BarData):
                 self.volume = from_dict_get_float(data, 5)
         elif isinstance(self.bar_data, dict):
             data = self.bar_data
-            self.open_time = int(from_dict_get_float(data, "time") or from_dict_get_float(data, "timestamp") or 0)
+            self.open_time = int(
+                from_dict_get_float(data, "time") or from_dict_get_float(data, "timestamp") or 0
+            )
             self.open_price = from_dict_get_float(data, "open")
             self.high_price = from_dict_get_float(data, "high")
             self.low_price = from_dict_get_float(data, "low")

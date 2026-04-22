@@ -44,7 +44,9 @@ class CoinSwitchTickerData(TickerData):
         data = self.ticker_data or {}
         if isinstance(data, dict):
             self.ticker_symbol_name = from_dict_get_string(data, "symbol") or self.symbol_name
-            self.last_price = from_dict_get_float(data, "last") or from_dict_get_float(data, "price")
+            self.last_price = from_dict_get_float(data, "last") or from_dict_get_float(
+                data, "price"
+            )
             self.bid_price = from_dict_get_float(data, "bid")
             self.ask_price = from_dict_get_float(data, "ask")
             self.high = from_dict_get_float(data, "high")

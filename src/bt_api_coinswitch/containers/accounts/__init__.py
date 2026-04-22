@@ -38,7 +38,9 @@ class CoinSwitchAccountData(AccountData):
 
         if isinstance(self.account_data, dict):
             data = self.account_data
-            self.balances = from_dict_get_list(data, "data", []) or from_dict_get_list(data, "balances", [])
+            self.balances = from_dict_get_list(data, "data", []) or from_dict_get_list(
+                data, "balances", []
+            )
 
         self.has_been_init_data = True
         return self
