@@ -1,3 +1,4 @@
+"""Module documentation"""
 from __future__ import annotations
 
 from typing import Any
@@ -27,6 +28,7 @@ class CoinSwitchRequestData(Feed):
         }
 
     def __init__(self, data_queue: Any = None, **kwargs: Any) -> None:
+        """__init__ method"""
         super().__init__(data_queue, **kwargs)
         self.data_queue = data_queue
         self._api_key = kwargs.get("public_key") or kwargs.get("api_key") or ""
@@ -38,6 +40,7 @@ class CoinSwitchRequestData(Feed):
 
     @property
     def api_key(self) -> str:
+        """api_key method"""
         return self._api_key
 
     def _get_headers(self) -> dict[str, str]:
@@ -50,6 +53,7 @@ class CoinSwitchRequestData(Feed):
         return headers
 
     def push_data_to_queue(self, data):
+        """push_data_to_queue method"""
         if self.data_queue is not None:
             self.data_queue.put(data)
 
@@ -92,6 +96,7 @@ class CoinSwitchRequestData(Feed):
         return RequestData(res, extra_data)
 
     def async_callback(self, request_data):
+        """async_callback method"""
         if request_data is not None:
             self.push_data_to_queue(request_data)
 

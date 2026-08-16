@@ -1,3 +1,4 @@
+"""Module-level docstring."""
 from __future__ import annotations
 
 from bt_api_base.plugins.protocol import PluginInfo
@@ -7,6 +8,7 @@ from bt_api_coinswitch.feeds.live_coinswitch.spot import CoinSwitchRequestDataSp
 
 
 def get_plugin_info() -> PluginInfo:
+    """get_plugin_info function"""
     return PluginInfo(
         name="coinswitch",
         display_name="CoinSwitch",
